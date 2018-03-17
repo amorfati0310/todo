@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, {
+  Component
+} from "react";
 import TodoListTemplate from "./components/TodoListTemplate";
 import TodoInput from "./components/TodoInput";
 import TodoItemList from "./components/TodoItemList";
@@ -20,6 +22,7 @@ class App extends Component {
   handleCreate = () => {
     let newTodo = this.state.newTodo.trim();
     if (!newTodo) return;
+    //
     // let addTodo = { id: this.state.id, todo: newTodo, checked: null };
     this.setState({
       newTodo: "",
@@ -33,19 +36,41 @@ class App extends Component {
     }
   };
   render() {
-    const { newTodo, todos } = this.state;
+    const {
+      newTodo,
+      todos
+    } = this.state;
     console.log("this.state.todos", this.state.todos);
-    const { handleChange, handleCreate, handleKeyPress } = this;
-    return (
-      <div className="App">
-        <TodoListTemplate
-          form={
-            <TodoInput value={newTodo} onChange={handleChange} onKeyPress={handleKeyPress} onClick={handleCreate} />
-          }
-        >
-          <TodoItemList todos={todos} />
-        </TodoListTemplate>
-      </div>
+    const {
+      handleChange,
+      handleCreate,
+      handleKeyPress
+    } = this;
+    return ( <
+      div className = "App" >
+      <
+      TodoListTemplate form = { <
+        TodoInput value = {
+          newTodo
+        }
+        onChange = {
+          handleChange
+        }
+        onKeyPress = {
+          handleKeyPress
+        }
+        onClick = {
+          handleCreate
+        }
+        />
+      } >
+      <
+      TodoItemList todos = {
+        todos
+      }
+      /> <
+      /TodoListTemplate> <
+      /div>
     );
   }
 }
